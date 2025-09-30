@@ -2,10 +2,10 @@
 	"name": "chat-app-yt",
 	"version": "1.0.0",
 	"description": "",
-	"main": "backend/server.js",
+	"main": "src/server.js",
 	"scripts": {
-		"server": "nodemon backend/server.js",
-		"start": "node backend/server.js",
+		"server": "nodemon src/server.js",
+		"start": "node src/server.js",
 		"build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
 	},
 	"type": "module",
