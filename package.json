@@ -6,8 +6,9 @@
 	"scripts": {
 		"server": "nodemon src/server.js",
 		"start": "node src/server.js",
-		"build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
-		"install-deps": "npm install && npm install --prefix frontend",
+		"build": "npm install && cd frontend && npm install && npm run build",
+		"install-deps": "npm install && cd frontend && npm install",
+		"prebuild": "npm run install-deps",
 		"static": "cd dist && python -m http.server 3000",
 		"static-node": "node -e \"const http=require('http');const fs=require('fs');const path=require('path');http.createServer((req,res)=>{let file='./dist'+(req.url==='/'?'/index.html':req.url);fs.readFile(file,(err,data)=>{if(err){res.writeHead(404);res.end('Not Found');}else{res.writeHead(200,{'Content-Type':path.extname(file)==='.css'?'text/css':path.extname(file)==='.js'?'application/javascript':'text/html'});res.end(data);}})}).listen(3000);console.log('Static server running at http://localhost:3000');\""
 	},
