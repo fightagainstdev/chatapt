@@ -6,8 +6,8 @@
 	"scripts": {
 		"server": "nodemon src/server.js",
 		"start": "node src/server.js",
-		"build": "cd frontend && npm install && npm run build",
-		"install-deps": "npm install && cd frontend && npm install"
+		"build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+		"install-deps": "npm install && npm install --prefix frontend"
 	},
 	"type": "module",
 	"keywords": [],
