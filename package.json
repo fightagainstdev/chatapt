@@ -2,16 +2,11 @@
 	"name": "chat-app-yt",
 	"version": "1.0.0",
 	"description": "",
-	"main": "src/server.js",
+	"main": "server.js",
 	"scripts": {
-		"server": "nodemon src/server.js",
-		"start": "node src/server.js",
-		"build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
-		"install-deps": "npm install && npm install --prefix frontend",
-		"prebuild": "npm run install-deps",
-		"build:frontend": "cd frontend && npm install && npm run build",
-		"static": "cd dist && python -m http.server 3000",
-		"static-node": "node -e \"const http=require('http');const fs=require('fs');const path=require('path');http.createServer((req,res)=>{let file='./dist'+(req.url==='/'?'/index.html':req.url);fs.readFile(file,(err,data)=>{if(err){res.writeHead(404);res.end('Not Found');}else{res.writeHead(200,{'Content-Type':path.extname(file)==='.css'?'text/css':path.extname(file)==='.js'?'application/javascript':'text/html'});res.end(data);}})}).listen(3000);console.log('Static server running at http://localhost:3000');\""
+		"server": "nodemon backend/server.js",
+		"start": "node backend/server.js",
+		"build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
 	},
 	"type": "module",
 	"keywords": [],
@@ -24,8 +19,7 @@
 		"express": "^4.18.2",
 		"jsonwebtoken": "^9.0.2",
 		"mongoose": "^8.1.1",
-		"socket.io": "^4.7.4",
-		"socket.io-client": "^4.8.1"
+		"socket.io": "^4.7.4"
 	},
 	"devDependencies": {
 		"nodemon": "^3.0.3"
