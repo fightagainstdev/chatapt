@@ -2,11 +2,11 @@
   "name": "chat-app-yt",
   "version": "1.0.0",
   "description": "Fullstack chat app with Express + React (Vite)",
-  "main": "src/server.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "server": "nodemon backend/server.js",
-    "start": "node src/server.js",
+    "start": "node server.js",
     "build": "npm install && cd frontend && npm install && cd frontend && npm run build"
   },
   "keywords": [],
